@@ -1,5 +1,5 @@
 import React from 'react';
-import { Zap, ExternalLink, Globe, MessageSquare, Mail, Share2 } from 'lucide-react';
+import { Zap, ExternalLink, Globe, MessageSquare, Mail, Share2, Phone } from 'lucide-react';
 
 export const Footer: React.FC = () => {
   return (
@@ -20,7 +20,7 @@ export const Footer: React.FC = () => {
         </div>
 
         {/* Clickable Social & Contact Links */}
-        <div className="flex flex-wrap items-center justify-center gap-4 text-xs font-mono text-slate-300">
+        <div className="flex flex-wrap items-center justify-center gap-3 text-xs font-mono text-slate-300">
           <a
             href="https://github.com/Dnyaneshwar86/DEVDASH-120"
             target="_blank"
@@ -31,19 +31,26 @@ export const Footer: React.FC = () => {
           </a>
 
           <a
-            href="https://wa.me/919682410708?text=Hi!%20I%20saw%20your%20DevDash%20120%20Micro-SaaS%20portfolio%20and%20want%20to%20hire%20you."
+            href="https://wa.me/917507093235?text=Hi!%20I%20saw%20your%20DevDash%20120%20Micro-SaaS%20portfolio%20and%20want%20to%20hire%20you."
             target="_blank"
             rel="noreferrer"
             className="px-3 py-1.5 rounded-lg bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/20 transition-all flex items-center gap-1.5"
           >
-            <MessageSquare className="w-3.5 h-3.5" /> WhatsApp Direct
+            <MessageSquare className="w-3.5 h-3.5" /> WhatsApp (+91 7507093235)
           </a>
 
           <a
-            href="mailto:dnyaneshwar.devdash120@gmail.com?subject=Hire%20Developer%20-%20DevDash%20120"
+            href="tel:+917507093235"
+            className="px-3 py-1.5 rounded-lg bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 hover:bg-emerald-500/20 transition-all flex items-center gap-1.5"
+          >
+            <Phone className="w-3.5 h-3.5 text-emerald-400" /> Call Direct
+          </a>
+
+          <a
+            href="mailto:adagale2005@gmail.com?subject=Hire%20Developer%20-%20DevDash%20120"
             className="px-3 py-1.5 rounded-lg bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 hover:bg-cyan-500/20 transition-all flex items-center gap-1.5"
           >
-            <Mail className="w-3.5 h-3.5" /> Email Me
+            <Mail className="w-3.5 h-3.5" /> adagale2005@gmail.com
           </a>
 
           <a

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { X, Send, Calendar, MessageSquare, Clock, CheckCircle2, Zap, ShieldAlert } from 'lucide-react';
+import { X, Send, Calendar, MessageSquare, Clock, CheckCircle2, Zap, ShieldAlert, Phone } from 'lucide-react';
 import confetti from 'canvas-confetti';
 
 interface HireMeModalProps {
@@ -127,12 +127,12 @@ export const HireMeModal: React.FC<HireMeModalProps> = ({ isOpen, onClose }) => 
                 </button>
 
                 <a
-                  href="https://wa.me/919682410708?text=Hi!%20I%20saw%20your%20DevDash%20120%20Micro-SaaS%20portfolio%20and%20want%20to%20hire%20you."
+                  href="https://wa.me/917507093235?text=Hi!%20I%20saw%20your%20DevDash%20120%20Micro-SaaS%20portfolio%20and%20want%20to%20hire%20you."
                   target="_blank"
                   rel="noreferrer"
-                  className="px-4 py-3 rounded-xl bg-emerald-950/80 border border-emerald-500/50 text-emerald-400 font-mono text-xs font-bold hover:bg-emerald-900 transition-colors flex items-center justify-center gap-1.5 active:scale-95"
+                  className="px-4 py-3 rounded-xl bg-emerald-950/80 border border-emerald-500/50 text-emerald-400 font-mono text-xs font-bold hover:bg-emerald-900 transition-colors flex items-center justify-center gap-1.5 active:scale-95 shrink-0"
                 >
-                  <MessageSquare className="w-4 h-4" /> WhatsApp Direct
+                  <MessageSquare className="w-4 h-4" /> WhatsApp (+91 7507093235)
                 </a>
               </div>
             </form>
@@ -144,7 +144,7 @@ export const HireMeModal: React.FC<HireMeModalProps> = ({ isOpen, onClose }) => 
             </div>
             <h3 className="font-space text-2xl font-black text-white">Inquiry Received! 🚀</h3>
             <p className="text-sm text-slate-300">
-              I'll review your project requirements and respond to <strong>{formData.email}</strong> within 1 hour!
+              I'll review your project requirements and respond to <strong>{formData.email}</strong> within 1 hour! You can also reach me directly at <strong>adagale2005@gmail.com</strong> or WhatsApp <strong>+91 7507093235</strong>.
             </p>
             <button
               onClick={onClose}
