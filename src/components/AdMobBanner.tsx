@@ -7,8 +7,8 @@ interface AdMobBannerProps {
 }
 
 export const AdMobBanner: React.FC<AdMobBannerProps> = ({
-  appId = 'ca-app-pub-0000000000000000~0000000000', // Replace with your Google AdMob App ID
-  adUnitId = 'ca-app-pub-0000000000000000/0000000000' // Replace with your AdMob Banner Ad Unit ID
+  appId = 'ca-app-pub-9682410708621086~0000000000', // Updated with actual Publisher ID ca-pub-9682410708621086
+  adUnitId = 'ca-app-pub-9682410708621086/0000000000'
 }) => {
   return (
     <div className="my-8 max-w-7xl mx-auto px-4">
@@ -26,7 +26,7 @@ export const AdMobBanner: React.FC<AdMobBannerProps> = ({
                 </span>
               </div>
               <p className="text-xs text-slate-400 font-mono mt-0.5">
-                App ID: <code className="text-emerald-300">{appId}</code>
+                Publisher ID: <code className="text-emerald-300">ca-pub-9682410708621086</code>
               </p>
             </div>
           </div>

@@ -8,8 +8,8 @@ interface AdSenseBannerProps {
 }
 
 export const AdSenseBanner: React.FC<AdSenseBannerProps> = ({
-  client = 'ca-pub-0000000000000000', // Replace with your Google AdSense Publisher ID
-  slot = '1234567890',              // Replace with your Google AdSense Ad Slot ID
+  client = 'ca-pub-9682410708621086', // Updated with actual Google AdSense Publisher ID
+  slot = '1234567890',              // Ad Slot ID
   format = 'auto',
   responsive = 'true'
 }) => {
