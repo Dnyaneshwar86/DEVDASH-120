@@ -1,6 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { Sparkles, ExternalLink, Tag } from 'lucide-react';
 
+declare global {
+  interface Window {
+    adsbygoogle: any[];
+  }
+}
+
 interface AdSenseBannerProps {
   client?: string;
   slot?: string;
@@ -55,10 +61,12 @@ export const AdSenseBanner: React.FC<AdSenseBannerProps> = ({
 
   useEffect(() => {
     try {
-      // @ts-ignore
-      (window.adsbygoogle = window.adsbygoogle || []).push({});
+      if (typeof window !== 'undefined') {
+        window.adsbygoogle = window.adsbygoogle || [];
+        window.adsbygoogle.push({});
+      }
     } catch (err) {
-      console.log('AdSense script loading fallback:', err);
+      console.log('AdSense blocked by extension or not loaded:', err);
     }
 
     const interval = setInterval(() => {
@@ -80,7 +88,7 @@ export const AdSenseBanner: React.FC<AdSenseBannerProps> = ({
         </span>
       </div>
 
-      {/* Google AdSense Dynamic Slot Unit with explicit size wrapper to prevent availableWidth=0 error */}
+      {/* Google AdSense Dynamic Slot Unit with error-safe wrapper & SSR guard */}
       <div className="mb-4 w-full min-h-[90px] flex justify-center items-center overflow-hidden bg-white/5 border border-white/10 rounded-2xl p-2">
         <ins
           className="adsbygoogle"
