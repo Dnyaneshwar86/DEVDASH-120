@@ -8,6 +8,7 @@ import { GitHubLiveStats } from './components/GitHubLiveStats';
 import { MonetizationSection } from './components/MonetizationSection';
 import { TwitterViralHookSection } from './components/TwitterViralHookSection';
 import { AdSenseBanner } from './components/AdSenseBanner';
+import { AdMobBanner } from './components/AdMobBanner';
 import { Footer } from './components/Footer';
 import { BuyCodeModal } from './components/BuyCodeModal';
 import { HireMeModal } from './components/HireMeModal';
@@ -41,8 +42,11 @@ export function App() {
         {/* Interactive Code Sandbox */}
         <InteractiveSandbox />
 
-        {/* Google AdSense Unit Banner */}
+        {/* Google AdSense Dynamic Sponsored Banner */}
         <AdSenseBanner />
+
+        {/* Google AdMob Live App ID Integration Banner */}
+        <AdMobBanner />
 
         {/* GitHub Live Stats Badge & Proof */}
         <GitHubLiveStats />
