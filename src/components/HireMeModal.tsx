@@ -121,16 +121,16 @@ export const HireMeModal: React.FC<HireMeModalProps> = ({ isOpen, onClose }) => 
               <div className="pt-2 flex flex-col sm:flex-row gap-3">
                 <button
                   type="submit"
-                  className="flex-1 py-3 rounded-xl bg-[#00FF66] text-black font-space font-extrabold text-xs uppercase tracking-wider hover:bg-[#00e65c] transition-all shadow-[0_0_20px_rgba(0,255,106,0.4)] flex items-center justify-center gap-2"
+                  className="flex-1 py-3 rounded-xl bg-[#00FF66] text-black font-space font-extrabold text-xs uppercase tracking-wider hover:bg-[#00e65c] transition-all shadow-[0_0_20px_rgba(0,255,106,0.4)] flex items-center justify-center gap-2 active:scale-95"
                 >
                   <Send className="w-4 h-4 fill-black" /> Send Inquiry & Book ($30/h)
                 </button>
 
                 <a
-                  href="https://wa.me/919876543210?text=Hi%20Sameer,%20I%20want%20to%20hire%20you%20for%20a%20Custom%20Build"
+                  href="https://wa.me/919682410708?text=Hi!%20I%20saw%20your%20DevDash%20120%20Micro-SaaS%20portfolio%20and%20want%20to%20hire%20you."
                   target="_blank"
                   rel="noreferrer"
-                  className="px-4 py-3 rounded-xl bg-emerald-950/80 border border-emerald-500/50 text-emerald-400 font-mono text-xs font-bold hover:bg-emerald-900 transition-colors flex items-center justify-center gap-1.5"
+                  className="px-4 py-3 rounded-xl bg-emerald-950/80 border border-emerald-500/50 text-emerald-400 font-mono text-xs font-bold hover:bg-emerald-900 transition-colors flex items-center justify-center gap-1.5 active:scale-95"
                 >
                   <MessageSquare className="w-4 h-4" /> WhatsApp Direct
                 </a>
