@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://devdash-120.vercel.app/sitemap.xml
