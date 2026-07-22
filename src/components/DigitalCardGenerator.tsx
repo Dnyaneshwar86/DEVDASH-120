@@ -10,10 +10,10 @@ export const DigitalCardGenerator: React.FC = () => {
     role: 'Full-Stack SaaS Developer & AI Engineer',
     bio: 'Building high-conversion micro-SaaS products & micro-frontend architectures with 10x speed.',
     skills: ['React 19', 'Next.js 15', 'TypeScript', 'Tailwind CSS', 'Node.js', 'Python AI'],
-    github: 'https://github.com',
+    github: 'https://github.com/Dnyaneshwar86/DEVDASH-120',
     twitter: 'https://twitter.com',
     linkedin: 'https://linkedin.com',
-    email: 'sameer@devdash120.io',
+    email: 'adagale2005@gmail.com',
     avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80',
     theme: 'cyber',
     customColor: '#00FF66'
@@ -35,7 +35,7 @@ export const DigitalCardGenerator: React.FC = () => {
   const handleAddSkill = (e: React.KeyboardEvent) => {
     if (e.key === 'Enter' && skillInput.trim()) {
       e.preventDefault();
-      if (!card.skills.includes(skillInput.trim())) {
+      if (!card.skills.includes(skillInput.trim()) && card.skills.length < 8) {
         setCard({ ...card, skills: [...card.skills, skillInput.trim()] });
       }
       setSkillInput('');
@@ -67,7 +67,7 @@ export const DigitalCardGenerator: React.FC = () => {
       <div className="text-center max-w-3xl mx-auto mb-12">
         <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#00FF66]/10 border border-[#00FF66]/30 text-[#00FF66] text-xs font-mono font-bold mb-4">
           <Sparkles className="w-4 h-4 animate-spin text-[#00FF66]" />
-          <span>⚡ CORE LIVE TOOL: 5-SECOND CARD GENERATOR</span>
+          <span>⚡ CORE LIVE TOOL: REALTIME CARD GENERATOR</span>
         </div>
         <h2 className="font-space text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight">
           Generate Your <span className="text-[#00FF66] text-glow-neon">AI Digital Dev Card</span>
@@ -91,10 +91,10 @@ export const DigitalCardGenerator: React.FC = () => {
                   role: 'Senior React & Micro-SaaS Architect',
                   bio: 'Crafting pixel-perfect web applications, custom micro-services, and scalable cloud solutions.',
                   skills: ['React', 'TypeScript', 'GraphQL', 'Docker', 'Vercel', 'PostgreSQL'],
-                  github: 'https://github.com',
+                  github: 'https://github.com/Dnyaneshwar86/DEVDASH-120',
                   twitter: 'https://twitter.com',
                   linkedin: 'https://linkedin.com',
-                  email: 'aarav@devdash120.io',
+                  email: 'adagale2005@gmail.com',
                   avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80',
                   theme: 'synth',
                   customColor: '#a855f7'
@@ -109,9 +109,13 @@ export const DigitalCardGenerator: React.FC = () => {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
-              <label className="block text-xs font-mono text-slate-300 mb-1">Full Name</label>
+              <div className="flex justify-between items-center mb-1">
+                <label className="text-xs font-mono text-slate-300">Full Name</label>
+                <span className="text-[10px] font-mono text-slate-500">{card.name.length}/40</span>
+              </div>
               <input
                 type="text"
+                maxLength={40}
                 value={card.name}
                 onChange={(e) => setCard({ ...card, name: e.target.value })}
                 className="w-full bg-black/60 border border-white/15 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-[#00FF66] transition-colors"
@@ -119,9 +123,13 @@ export const DigitalCardGenerator: React.FC = () => {
               />
             </div>
             <div>
-              <label className="block text-xs font-mono text-slate-300 mb-1">Role / Tech Title</label>
+              <div className="flex justify-between items-center mb-1">
+                <label className="text-xs font-mono text-slate-300">Role / Tech Title</label>
+                <span className="text-[10px] font-mono text-slate-500">{card.role.length}/45</span>
+              </div>
               <input
                 type="text"
+                maxLength={45}
                 value={card.role}
                 onChange={(e) => setCard({ ...card, role: e.target.value })}
                 className="w-full bg-black/60 border border-white/15 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-[#00FF66] transition-colors"
@@ -131,9 +139,13 @@ export const DigitalCardGenerator: React.FC = () => {
           </div>
 
           <div>
-            <label className="block text-xs font-mono text-slate-300 mb-1">Short Bio / Tagline</label>
+            <div className="flex justify-between items-center mb-1">
+              <label className="text-xs font-mono text-slate-300">Short Bio / Tagline</label>
+              <span className="text-[10px] font-mono text-slate-500">{card.bio.length}/120</span>
+            </div>
             <textarea
               rows={2}
+              maxLength={120}
               value={card.bio}
               onChange={(e) => setCard({ ...card, bio: e.target.value })}
               className="w-full bg-black/60 border border-white/15 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-[#00FF66] transition-colors resize-none"
@@ -143,10 +155,11 @@ export const DigitalCardGenerator: React.FC = () => {
 
           <div>
             <label className="block text-xs font-mono text-slate-300 mb-1">
-              Tech Stack Skills (Press Enter to add)
+              Tech Stack Skills (Press Enter to add, max 8)
             </label>
             <input
               type="text"
+              maxLength={25}
               value={skillInput}
               onChange={(e) => setSkillInput(e.target.value)}
               onKeyDown={handleAddSkill}
@@ -222,7 +235,7 @@ export const DigitalCardGenerator: React.FC = () => {
           <div
             className={`relative rounded-3xl p-7 border backdrop-blur-2xl transition-all duration-300 ${
               themeStyles[card.theme]
-            } group`}
+            } group overflow-hidden`}
           >
             <div className="absolute top-0 right-0 w-32 h-32 bg-[#00FF66]/10 rounded-full blur-3xl pointer-events-none"></div>
 
@@ -233,31 +246,31 @@ export const DigitalCardGenerator: React.FC = () => {
                   alt={card.name}
                   className="w-16 h-16 rounded-2xl object-cover border-2 border-[#00FF66]/60 shadow-[0_0_15px_rgba(0,255,106,0.3)] group-hover:scale-105 transition-transform"
                 />
-                <div>
+                <div className="text-left overflow-hidden">
                   <div className="flex items-center gap-1.5">
-                    <h3 className="font-space text-2xl font-black text-white tracking-tight">
+                    <h3 className="font-space text-xl sm:text-2xl font-black text-white tracking-tight truncate max-w-[220px] sm:max-w-[300px]">
                       {card.name || 'Your Name'}
                     </h3>
-                    <BadgeCheck className="w-5 h-5 text-[#00FF66]" />
+                    <BadgeCheck className="w-5 h-5 text-[#00FF66] shrink-0" />
                   </div>
-                  <p className="text-xs font-mono text-[#00FF66] font-medium mt-0.5">
+                  <p className="text-xs font-mono text-[#00FF66] font-medium mt-0.5 truncate max-w-[240px] sm:max-w-[320px]">
                     {card.role || 'Your Developer Title'}
                   </p>
                 </div>
               </div>
 
               {showQR && (
-                <div className="bg-white p-2 rounded-xl shadow-2xl animate-in zoom-in-95 duration-150">
+                <div className="bg-white p-2 rounded-xl shadow-2xl animate-in zoom-in-95 duration-150 shrink-0">
                   <QRCodeSVG value={`https://devdash120.io/card/${encodeURIComponent(card.name)}`} size={70} />
                 </div>
               )}
             </div>
 
-            <p className="mt-5 text-sm text-slate-300 leading-relaxed font-normal">
+            <p className="mt-5 text-sm text-slate-300 leading-relaxed font-normal text-left break-words">
               {card.bio || 'Your developer bio description will display here...'}
             </p>
 
-            <div className="mt-6">
+            <div className="mt-6 text-left">
               <span className="text-[11px] font-mono text-slate-400 uppercase tracking-wider block mb-2">
                 Verified Tech Stack
               </span>
@@ -302,14 +315,14 @@ export const DigitalCardGenerator: React.FC = () => {
                 triggerConfetti();
                 alert('Card generated successfully! Check copied payload.');
               }}
-              className="flex-1 py-2.5 rounded-xl bg-gradient-to-r from-[#00FF66] to-emerald-500 text-black font-space font-bold text-xs flex items-center justify-center gap-2 hover:opacity-90 transition-opacity shadow-[0_0_20px_rgba(0,255,106,0.3)]"
+              className="flex-1 py-2.5 rounded-xl bg-gradient-to-r from-[#00FF66] to-emerald-500 text-black font-space font-bold text-xs flex items-center justify-center gap-2 hover:opacity-90 transition-opacity shadow-[0_0_20px_rgba(0,255,106,0.3)] active:scale-95"
             >
               <Download className="w-4 h-4" /> Export Card Payload
             </button>
 
             <button
               onClick={copyCardData}
-              className="px-4 py-2.5 rounded-xl bg-white/5 border border-white/10 text-xs font-mono text-white hover:bg-white/10 transition-colors flex items-center gap-2"
+              className="px-4 py-2.5 rounded-xl bg-white/5 border border-white/10 text-xs font-mono text-white hover:bg-white/10 transition-colors flex items-center gap-2 active:scale-95"
             >
               <Share2 className="w-4 h-4 text-[#a855f7]" /> Share Card
             </button>

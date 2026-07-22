@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Sparkles, ExternalLink, Zap, ShieldCheck, Tag } from 'lucide-react';
+import { Sparkles, ExternalLink, Tag } from 'lucide-react';
 
 interface AdSenseBannerProps {
   client?: string;
@@ -30,9 +30,9 @@ export const AdSenseBanner: React.FC<AdSenseBannerProps> = ({
       textAccent: 'text-[#00FF66]'
     },
     {
-      title: '🚀 Accept Global Payments Instantly with Stripe Checkout',
-      desc: 'Scale your SaaS revenue globally. 135+ currencies, Apple Pay, credit cards, and automated billing.',
-      sponsor: 'Stripe Ads',
+      title: '🚀 Accept Global Payments Instantly with Stripe & Razorpay',
+      desc: 'Scale your SaaS revenue globally. 135+ currencies, UPI, Apple Pay, credit cards, and automated billing.',
+      sponsor: 'Stripe & Razorpay Ads',
       tag: 'SaaS Monetization',
       cta: 'Start Integrating Free',
       url: 'https://stripe.com',
@@ -58,7 +58,7 @@ export const AdSenseBanner: React.FC<AdSenseBannerProps> = ({
       // @ts-ignore
       (window.adsbygoogle = window.adsbygoogle || []).push({});
     } catch (err) {
-      console.log('AdSense script loading fallback');
+      console.log('AdSense script loading fallback:', err);
     }
 
     const interval = setInterval(() => {
@@ -80,8 +80,8 @@ export const AdSenseBanner: React.FC<AdSenseBannerProps> = ({
         </span>
       </div>
 
-      {/* Google AdSense Dynamic Slot Unit with Test Ads Enabled */}
-      <div className="mb-4">
+      {/* Google AdSense Dynamic Slot Unit with explicit size wrapper to prevent availableWidth=0 error */}
+      <div className="mb-4 w-full min-h-[90px] flex justify-center items-center overflow-hidden bg-white/5 border border-white/10 rounded-2xl p-2">
         <ins
           className="adsbygoogle"
           style={{ display: 'block', width: '100%', minHeight: '90px' }}
@@ -89,7 +89,6 @@ export const AdSenseBanner: React.FC<AdSenseBannerProps> = ({
           data-ad-slot={slot}
           data-ad-format={format}
           data-full-width-responsive={responsive}
-          data-adtest="on"
         />
       </div>
 
